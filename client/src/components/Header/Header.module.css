@@ -1,0 +1,85 @@
+/** LOGO */
+
+.logo {
+	float: left;
+	width: 300;
+	letter-spacing: -2px;
+}
+
+.logo h1 a {
+	display: block;
+	line-height: 100px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Archivo Narrow', 'Open Sans', sans-serif;
+	font-size: 1.3em;
+	color: #3E3E3E;
+}
+
+.logo span {
+	color: rgb(235, 143, 57);
+}
+
+/** MENU */
+
+.menu {
+	float: right;
+	width: 800px;
+}
+
+.menu ul {
+	float: right;
+	margin: 0px;
+	padding: 30px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+.menu li {
+	float: left;
+	border-left: 1px solid #E7E7E7;
+}
+
+.menu a {
+	display: block;
+	padding: 10px 20px;
+	margin: 0em 1em;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 1.10em;
+	font-weight: 600;
+	color:  rgb(235, 143, 57);
+}
+
+.menu .active a {
+	background: rgb(235, 143, 57);
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.1);
+	border: 1px solid rgb(184, 113, 46);
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.menu .active a:hover {
+	background-color: rgb(184, 113, 46);
+	cursor: pointer;
+}
+
+.menu .active a:active {
+	background-color: rgb(184, 113, 46);
+	cursor: pointer;
+}
+
+.menu a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/** HEADER **/
+
+.header {
+	overflow: hidden;
+	border-bottom: 1px solid #E7E7E7;
+}
