@@ -1,0 +1,14 @@
+.container {
+	width: 1200px;
+	margin: 0px auto;
+}
+
+header h1, h2, h3 {
+	padding: 20px 0px 20px 0px;
+	text-transform: uppercase;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.banner {
+	padding: 30px 0px;
+}
