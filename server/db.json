@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "Musaka",
+            "description": "You should test.",
+            "imageURL": "none",
+            "category": "Main",
+            "likes": "0",
+            "creator": "5566"
+        },
+        {
+            "id": 2,
+            "name": "Supa",
+            "description": "Tasty.",
+            "imageURL": "none",
+            "category": "First",
+            "likes": "1",
+            "creator": "2566"
+        }
+    ]
+}
