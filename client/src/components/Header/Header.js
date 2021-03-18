@@ -5,22 +5,22 @@ const Header = () => {
         <div>
 
 
-<div className={style.header} className={style.container}>
-  <div className={style.logo}>
-    <h1><a href="#"><span>Cook</span>Book</a></h1>
-  </div>
-  <div className={style.menu}>
-    <ul>
+          <div className={style.header} className={style.container}>
+            <div className={style.logo}>
+              <h1><a href="#"><span>Cook</span>Book</a></h1>
+            </div>
+            <div className={style.menu}>
+              <ul>
 
-      <li><a href="#">Homepage</a></li>
+                <li><a href="#">Homepage</a></li>
 
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Register</a></li>
-      <li><a href="#">Create</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Create</a></li>
 
-    </ul>
-  </div>
-</div>
+              </ul>
+            </div>
+          </div>
 
 
         </div>

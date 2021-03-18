@@ -1,0 +1,87 @@
+/* CONTAINER */
+.container {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+/* Button */
+.button {
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	background: rgb(235, 143, 57);
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.1);
+	border: 1px solid rgb(184, 113, 46);
+	line-height: normal;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, .2);
+	font-size: 1em;
+	font-weight: 400;
+	color: #FFF !important;
+}
+
+.button a {
+	text-decoration: none;
+	color: #FFF !important;
+}
+
+a:hover {
+	background-color: rgb(184, 113, 46);
+	text-decoration: none;
+	  cursor: pointer;
+  }
+  
+  a:active {
+	  background-color: rgb(184, 113, 46);
+	  cursor: pointer;
+  }
+
+/* THUMBNAIL */
+
+.row {
+    display: flex;
+}
+
+.thumbnail {
+	min-height: 380px;
+	max-width: 360px;
+    padding: 0px 10px 30px 10px;
+}
+
+.thumbnail:nth-child(2) {
+    margin: 0 20px;
+}
+
+.thumbnail p {
+	padding-right: 24px;
+	max-height: 10vmin;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thumbnail h1, h2, h3, h4, h5 {
+	padding-top: 20px;
+	text-transform: uppercase;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	letter-spacing: -1px;
+}
+
+/* IMAGE */
+.thumbnail img {
+    max-width: 100%;
+}
+
+.image {
+	display: block;
+	margin: 0 0 1em 0;
+	max-width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-radius: 5px;
+}
+

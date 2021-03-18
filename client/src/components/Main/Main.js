@@ -1,4 +1,5 @@
 import style from './Main.module.css';
+import Item from '../Item';
 
 const Main = () => {
     return (
@@ -12,6 +13,9 @@ const Main = () => {
         </header>
 
         <div className={style.row}>
+
+        <Item />
+            
             {/* <div className={style.col-sm-4}>
             <app-cooks-card [cook]="cook"></app-cooks-card>
             </div>    */}
@@ -22,4 +26,3 @@ const Main = () => {
 }
 
 export default Main;
-
