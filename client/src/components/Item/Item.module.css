@@ -1,6 +1,6 @@
 /* CONTAINER */
 .container {
-	max-width: 1200px;
+	max-width: 1180px;
 	margin: 0px auto;
 }
 
@@ -43,17 +43,15 @@ a:hover {
 /* THUMBNAIL */
 
 .row {
-    display: flex;
+	display: flex;
+	justify-content: space-between;
 }
 
 .thumbnail {
 	min-height: 380px;
 	max-width: 360px;
-    padding: 0px 10px 30px 10px;
-}
-
-.thumbnail:nth-child(2) {
-    margin: 0 20px;
+	padding: 0;
+	margin: 0;
 }
 
 .thumbnail p {

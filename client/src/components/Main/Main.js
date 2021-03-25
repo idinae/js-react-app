@@ -5,7 +5,7 @@ const Main = () => {
     return (
         <div>
         <div className={style.banner} className={style.container}> 
-            <img src="./assets/images/img1.jpg" width="1180" height="393" alt="" />
+            <img src="./assets/images/img1.jpg" alt="banner-image" />
         </div>
         <div className={style.container}>
         <header>
@@ -14,11 +14,8 @@ const Main = () => {
 
         <div className={style.row}>
 
-        <Item />
-            
-            {/* <div className={style.col-sm-4}>
-            <app-cooks-card [cook]="cook"></app-cooks-card>
-            </div>    */}
+            <Item />
+
         </div>
         </div>
         </div>

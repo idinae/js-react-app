@@ -9,10 +9,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
-
       <Switch>
-        <Route path="./test" component />
+      <Route path="/" exact component={Main} />
       
       </Switch>
 
