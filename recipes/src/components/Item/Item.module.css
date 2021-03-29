@@ -42,8 +42,9 @@ a:hover {
 
 /* THUMBNAIL */
 
-.row {
+.reciperow {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
