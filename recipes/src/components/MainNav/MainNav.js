@@ -5,11 +5,11 @@ const MainNav = () => {
     return (
 
                 <div className={style.dropdown} >
-                    <button className={style.dropbtn}>Всички</button>
+                    <button className={style.dropbtn}>Филтър</button>
                         <div className={style.dropdowncont}>
-                            <Link to="/types/salads">Салати</Link>
-                            <Link to="/types/soups">Супи</Link>
-                            <Link to="/types/mains">Основни</Link>
+                            <Link to="/type/starters">Предястия</Link>
+                            <Link to="/type/mains">Основни</Link>
+                            <Link to="/type/desserts">Десерти</Link>
                         </div>
                 </div>            
 
