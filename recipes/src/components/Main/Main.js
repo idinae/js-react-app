@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 import style from './Main.module.css';
 import Recipe from '../Recipe';
+import MainNav from '../MainNav';
 
 class Main extends Component {
     constructor(props) {
@@ -29,18 +30,7 @@ class Main extends Component {
                 <img src="./assets/images/img1.jpg" alt="banner-image" />
             </div>
             <div className={style.container}>
-            <header>
-                {/* <h2>Всички рецепти</h2> */}
-                <div className={style.dropdown} >
-                    <button className={style.dropbtn}>Всички</button>
-                        <div className={style.dropdowncont}>
-                            <a href="#">Салати</a>
-                            <a href="#">Супи</a>
-                            <a href="#">Основни</a>
-                        </div>
-                </div>
-                
-            </header>
+                <MainNav />
 
             <div className={style.reciperow}>
 

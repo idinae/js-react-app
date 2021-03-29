@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={Main} />
-      
+        <Route path="/types/:type" component={Main} />
       </Switch>
 
       <Footer />
