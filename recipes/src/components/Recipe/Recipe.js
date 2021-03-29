@@ -1,6 +1,6 @@
-import style from './Item.module.css';
+import style from './Recipe.module.css';
 
-const Item = ({
+const Recipe = ({
   id,
   type,
   name,
@@ -25,4 +25,4 @@ const Item = ({
     );
 }
 
-export default Item;
+export default Recipe;

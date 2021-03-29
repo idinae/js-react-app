@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import style from './Main.module.css';
-import Item from '../Item';
+import Recipe from '../Recipe';
 
 class Main extends Component {
     constructor(props) {
@@ -30,13 +30,22 @@ class Main extends Component {
             </div>
             <div className={style.container}>
             <header>
-                <h2>Всички рецепти</h2>
+                {/* <h2>Всички рецепти</h2> */}
+                <div className={style.dropdown} >
+                    <button className={style.dropbtn}>Всички</button>
+                        <div className={style.dropdowncont}>
+                            <a href="#">Салати</a>
+                            <a href="#">Супи</a>
+                            <a href="#">Основни</a>
+                        </div>
+                </div>
+                
             </header>
 
             <div className={style.reciperow}>
 
                 {this.state.recipes.map(x => 
-                <Item 
+                <Recipe 
                     key={x.id} 
                     id={x.id}
                     type={x.type}

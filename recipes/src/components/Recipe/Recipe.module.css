@@ -35,7 +35,7 @@ a:hover {
 	  cursor: pointer;
   }
   
-  a:active {
+a:active {
 	  background-color: rgb(184, 113, 46);
 	  cursor: pointer;
   }
