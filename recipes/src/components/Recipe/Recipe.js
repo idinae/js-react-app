@@ -16,7 +16,7 @@ const Recipe = ({
         <h3>{name}</h3>
         <p>{description}
         </p>
-        <Link to={`/recipes/details/${id}`} className={style.button}>Details</Link>
+        <Link to={`/recipes/details/${id}`} className={style.button}>Детайли</Link>
       </div>
     );
 }

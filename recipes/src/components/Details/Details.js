@@ -1,20 +1,33 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import * as recipeService from '../../services/recipeService';
+
 import style from './Details.module.css';
 
+
 const Details = ({
-    name,
-    description
+    match
 }) => {
+    let [recipe, setRecipe] = useState({});
+
+    useEffect(() => {
+        // we take the recipe with match and save it 
+        recipeService.getOne(match.params.recipeId)
+            .then(res => setRecipe(res));
+    }, []);
+
     return(
-        <div class="container">
-        <div class="row">
-            <img class="image" src="./../assets/images/{{ cooks[0].imageUrl }}" alt="" />
-            <div class="col-sm-7 text-left">
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <a class="button-style">Edit</a>
-            <a href="" class="button-style">Delete</a>
-            </div>
-        </div>
+        <div className={style.container}>
+            <article className={style.articlewrapper}>
+                <img className={style.image} src={recipe.imageUrl} alt="" />
+                <div className={style.column}>
+                    <h3>{recipe.name}</h3>
+                    <p>{recipe.description}</p>
+                    <Link className={style.button}>Edit</Link>
+                    <Link className={style.button}>Delete</Link>
+               </div>
+            </article>
         </div>
     )
 }

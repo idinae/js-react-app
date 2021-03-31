@@ -1,23 +1,27 @@
-.image {
-	display: block;
-	margin: 2em 0 2em 0;
-	max-width: 400px;
-	max-height: 250px;
-	padding-left: 0px;
-	padding-right: 0px;
-    border-radius: 5px;
-}
-
-
 /* CONTAINER */
 .container {
 	width: 1200px;
 	margin: 0px auto;
 }
 
+.articlewrapper {
+	background-color: teal;
+	position: flex;
+	flex-flow: column;
+	justify-items: center;
+}
+
+.image {
+	margin: 0;
+	max-width: 400px;
+	max-height: 250px;
+	padding: 100px 0;
+    border-radius: 5px;
+}
+
 
 /* Button */
-.button-style {
+.button {
 	display: inline-block;
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -37,7 +41,7 @@
 	color: #FFF !important;
 }
 
-.button-style a {
+.button a {
 	text-decoration: none;
 	color: #FFF !important;
 }

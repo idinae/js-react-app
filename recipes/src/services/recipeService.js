@@ -11,8 +11,8 @@ export const getAll = (type = '') => {
         .catch(error => console.log(error));
 }
 
-export const getOne = (petId) => {
-    return fetch(`${url}/${petId}`)
+export const getOne = (recipeId) => {
+    return fetch(`${url}/${recipeId}`)
         .then(res => res.json())
         .catch(error => console.log(error));
 }
