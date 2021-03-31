@@ -41,18 +41,19 @@ a:active {
   }
 
 /* THUMBNAIL */
-
-.reciperow {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
 .thumbnail {
 	min-height: 380px;
 	max-width: 360px;
 	padding: 0;
-	margin: 0;
+	margin: 20px 30px 30px;
+}
+
+.thumbnail:nth-child(3n+1) {
+	margin-left: 0;
+}
+
+.thumbnail:nth-child(3n+3) {
+	margin-right: 0;
 }
 
 .thumbnail p {

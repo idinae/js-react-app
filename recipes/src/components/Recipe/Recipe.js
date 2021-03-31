@@ -9,8 +9,6 @@ const Recipe = ({
 }) => {
     return (
 
-<div className={style.reciperow}>
-
     <div className={style.thumbnail}>
       <a href="/details/cook/:id"><img className="image" src={imageUrl} alt="" /></a>
       <h3>{name}</h3>
@@ -18,8 +16,6 @@ const Recipe = ({
       </p>
       <a href="/details/{{cook.id}}" className={style.button} onClick="onSelected(cook)">Details</a>
     </div>
-
-</div>
 
 
     );

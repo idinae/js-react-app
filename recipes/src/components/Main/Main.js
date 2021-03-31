@@ -42,7 +42,7 @@ class Main extends Component {
             .then(res => {
                 this.setState({ recipes: res, currentType: type })
             })
-        }
+    }
 
 
     render() {
@@ -52,7 +52,7 @@ class Main extends Component {
                     <img src="./assets/images/img1.jpg" alt="banner-image" />
                 </div>
                 <div className={style.container}>
-                    <MainNav />
+                    <MainNav typecheck={this.state.currentType} />
                     <div className={style.reciperow}>
                         {this.state.recipes.map(x => 
                             <Recipe 
