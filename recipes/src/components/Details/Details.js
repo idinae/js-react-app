@@ -22,10 +22,15 @@ const Details = ({
             <article className={style.articlewrapper}>
                 <img className={style.image} src={recipe.imageUrl} alt="" />
                 <div className={style.column}>
-                    <h3>{recipe.name}</h3>
-                    <p>{recipe.description}</p>
-                    <Link className={style.button}>Edit</Link>
-                    <Link className={style.button}>Delete</Link>
+                    <article className={style.articlecontent}>
+                        <h2>{recipe.name}</h2>
+                        <h3>Продукти:</h3>
+                        <p>{recipe.products}</p>
+                        <h3>Приготовление:</h3>
+                        <p>{recipe.description}</p>
+                        <Link to={`/recipes/edit/${recipe.id}`} className={style.button}>Edit</Link>
+                        <Link to={`/recipes/delete/${recipe.id}`} className={style.button}>Delete</Link>
+                    </article>
                </div>
             </article>
         </div>

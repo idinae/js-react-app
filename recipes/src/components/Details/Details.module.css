@@ -5,20 +5,34 @@
 }
 
 .articlewrapper {
-	background-color: teal;
+	max-width: 600px;
+	margin: 0px auto;
 	position: flex;
-	flex-flow: column;
-	justify-items: center;
+	flex-flow: column wrap;
 }
 
 .image {
 	margin: 0;
 	max-width: 400px;
 	max-height: 250px;
-	padding: 100px 0;
-    border-radius: 5px;
+	padding: 80px 0 30px;
+	transform: translate(100px, 0px);
 }
 
+.articlecontent {
+	text-align: center;
+}
+
+.articlecontent h3 {
+	margin-bottom: 0;
+	text-align: left;
+	padding: 0;
+}
+
+
+.articlecontent p {
+	padding: 10px 0;
+}
 
 /* Button */
 .button {
@@ -49,10 +63,10 @@
 a:hover {
 	background-color: rgb(184, 113, 46);
 	text-decoration: none;
-	  cursor: pointer;
-  }
-  
-  a:active {
-	  background-color: rgb(184, 113, 46);
-	  cursor: pointer;
-  }
+	cursor: pointer;
+}
+
+a:active {
+	background-color: rgb(184, 113, 46);
+	cursor: pointer;
+}
