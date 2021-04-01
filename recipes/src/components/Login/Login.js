@@ -1,4 +1,5 @@
 import firebase from '../../utils/firebase';
+import style from './Login.module.css';
 
 const Login = () => {
     const onLoginFormSubmitHandler = (e) => {
@@ -24,7 +25,7 @@ const Login = () => {
                 <input type="text" name="username" id="username" />
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" id="password" />
-            <button type="submit" className="buttonstyle" value="Login">Login</button>
+            <button type="submit" className={style.buttonstyle} value="Login">Login</button>
             </form>
         </div>
     )

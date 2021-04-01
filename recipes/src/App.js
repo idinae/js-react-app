@@ -20,6 +20,7 @@ function App() {
         <Route path="/recipes/details/:recipeId" component={Details} />
         <Route path="/recipes/create" component={Create} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/logout" render={props => {
           firebase.auth().signOut();
           return (<Redirect to="/" />)
