@@ -13,11 +13,11 @@ const Header = () => {
             <div className={style.menu}>
               <ul>
 
-                <li><Link to="#">Homepage</Link></li>
+                <li><Link to="/">Homepage</Link></li>
 
-                <li><Link to="#">Login</Link></li>
-                <li><Link to="#">Register</Link></li>
-                <li><Link to={"/recipes/create"}>Create</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/register">Register</Link></li>
+                <li><Link to="/recipes/create">Create</Link></li>
 
               </ul>
             </div>
