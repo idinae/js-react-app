@@ -8,10 +8,30 @@
 } */
 
 
+.container {
+	width: 1200px;
+	margin: 0px auto;
+}
+
+.articlewrapper {
+	max-width: 600px;
+	margin: 0px auto;
+	position: flex;
+    flex-flow: column wrap;
+    text-align: center;
+}
+
+.articlewrapper h1 {
+    padding: 150px 0 30px;
+}
+
+
 /*Form style*/
 form {
-    display: grid;
-    width: 25%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     color: #808080;
@@ -30,11 +50,11 @@ form {
   }
   
 /* Button */
-.button-style {
+.buttonstyle {
     display: inline-block;
     width: 120px;
 	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	padding: 10px 20px;
 	background: rgb(235, 143, 57);
 	border-radius: 5px;
