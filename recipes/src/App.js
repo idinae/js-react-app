@@ -6,7 +6,7 @@ import Main from './components/Main';
 import Details from './components/Details';
 import Create from './components/Create';
 import Login from './components/Login';
-import './utils/firebase';
+import firebase from './utils/firebase';
 import './App.css';
 
 function App() {
@@ -19,6 +19,9 @@ function App() {
         <Route path="/recipes/details/:recipeId" component={Details} />
         <Route path="/recipes/create" component={Create} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" render={props => {
+          firebase.auth().signOut();
+        }} />
       </Switch>
 
       <Footer />
