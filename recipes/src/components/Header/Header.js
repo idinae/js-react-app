@@ -13,7 +13,8 @@ const Header = () => {
             <div className={style.menu}>
               <ul>
 
-                <li><Link to="/">Homepage</Link></li>
+                <li><Link to="/">Home</Link></li>
+                {/* <li><Link to="/blog">Blog</Link></li> */}
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/register">Register</Link></li>
                 <li><Link to="/recipes/create">Create</Link></li>

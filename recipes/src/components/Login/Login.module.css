@@ -13,12 +13,10 @@
 }
 
 .articlewrapper {
-	max-width: 600px;
-	margin: 0px auto;
-	position: flex;
-    flex-flow: column wrap;
+    max-width: 600px;
+    margin: 0px auto;
     text-align: center;
-}
+  }
 
 .articlewrapper h1 {
     padding: 150px 0 30px;

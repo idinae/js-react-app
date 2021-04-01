@@ -34,7 +34,7 @@ class Main extends Component {
     //new request to db when updating
     componentDidUpdate(prevProps) {
         const type = this.props.match.params.type;
-            if (prevProps.match.params.type == type) {
+            if (prevProps.match.params.type === type) {
                 return;
             }
     
@@ -47,11 +47,11 @@ class Main extends Component {
 
     render() {
         return (
-            <div>
-                <div className={style.container}> 
-                    <img src="./assets/images/img1.jpg" alt="banner-image" />
+            <div className={style.container}>
+                <div> 
+                    <img src="./assets/images/img1.jpg" alt="aubergine in a plate" />
                 </div>
-                <div className={style.container}>
+                <div>
                     <MainNav typecheck={this.state.currentType} />
                     <div className={style.reciperow}>
                         {this.state.recipes.map(x => 

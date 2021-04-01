@@ -18,17 +18,17 @@ const Register = ({
     }
 
     return (
-        <div class={style.articlewrapper}>
+        <div className={style.articlewrapper}>
 
-            <h1>Register</h1>
+            <h1>Регистрирай се</h1>
             <form onSubmit={onRegisterSubmitHanlder}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Имейл:</label>
                 <input type="text" name="username" id="username" />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Парола:</label>
                 <input type="password" name="password" id="password" />
-                <label htmlFor="repeatPassword">Repeat Password</label>
+                <label htmlFor="repeatPassword">Повтори паролата:</label>
                 <input type="password" name="repeatPassword" id="repeatPassword"></input>
-                <button type="submit" value="Register" className={style.buttonstyle}>Register</button>
+                <button type="submit" value="Register" className={style.buttonstyle}>Изпрати</button>
             </form>
         </div>
     )

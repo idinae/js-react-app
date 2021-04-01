@@ -5,18 +5,17 @@
 }
 
 .articlewrapper {
-	max-width: 600px;
+	max-width: 500px;
 	margin: 0px auto;
-	position: flex;
-	flex-flow: column wrap;
-}
+	text-align: center;
+  }
 
 .image {
 	margin: 0;
 	max-width: 400px;
 	max-height: 250px;
 	padding: 80px 0 30px;
-	transform: translate(100px, 0px);
+	/* transform: translate(100px, 0px); */
 }
 
 .articlecontent {
@@ -28,7 +27,6 @@
 	text-align: left;
 	padding: 0;
 }
-
 
 .articlecontent p {
 	padding: 10px 0;

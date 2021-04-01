@@ -45,7 +45,7 @@ a:active {
 	min-height: 380px;
 	max-width: 360px;
 	padding: 0;
-	margin: 20px 30px 30px;
+	margin: 20px 30px 10px;
 }
 
 .thumbnail:nth-child(3n+1) {

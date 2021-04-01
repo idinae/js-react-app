@@ -19,13 +19,13 @@ const Login = () => {
 
     return(
         <div class={style.articlewrapper}>
-            <h1>Login</h1>
+            <h1>Влез</h1>
             <form onSubmit={onLoginFormSubmitHandler}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Имейл:</label>
                 <input type="text" name="username" id="username" />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Парола:</label>
                 <input type="password" name="password" id="password" />
-            <button type="submit" className={style.buttonstyle} value="Login">Login</button>
+            <button type="submit" className={style.buttonstyle} value="Login">Вход</button>
             </form>
         </div>
     )

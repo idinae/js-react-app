@@ -28,8 +28,8 @@ const Details = ({
                         <p>{recipe.products}</p>
                         <h3>Приготовление:</h3>
                         <p>{recipe.description}</p>
-                        <Link to={`/recipes/details/${recipe.id}/edit`} className={style.button}>Edit</Link>
-                        <Link to={`/recipes/details/${recipe.id}/delete`} className={style.button}>Delete</Link>
+                        <Link to={`/recipes/details/${recipe.id}/edit`} className={style.button}>Редактирай</Link>
+                        <Link to={`/recipes/details/${recipe.id}/delete`} className={style.button}>Изтрий</Link>
                     </article>
                </div>
             </article>
