@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,6 +6,7 @@ import Main from './components/Main';
 import Details from './components/Details';
 import Create from './components/Create';
 import Login from './components/Login';
+import Register from './components/Register';
 import firebase from './utils/firebase';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/logout" render={props => {
           firebase.auth().signOut();
+          return (<Redirect to="/" />)
         }} />
       </Switch>
 
