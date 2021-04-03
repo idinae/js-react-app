@@ -18,7 +18,7 @@ const Login = () => {
     };
 
     return(
-        <div class={style.articlewrapper}>
+        <div className={style.articlewrapper}>
             <h1>Влез</h1>
             <form onSubmit={onLoginFormSubmitHandler}>
                 <label htmlFor="username">Имейл:</label>
