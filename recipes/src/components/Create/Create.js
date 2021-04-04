@@ -2,14 +2,14 @@ import style from './Create.module.css';
 import { Redirect } from 'react-router-dom';
 
 const Create = () => {
-    onCreateButtonHandler {
+    // onCreateButtonHandler {
         
-    }
+    // }
 
     return(
         <div className={style.articlewrapper}>
             <h1>Създай нова рецепта</h1>
-            <form onSubmit={onCreateButtonHandler}>
+            <form >
                 <label htmlFor="type">Категория:</label>
                 <select id="type">
                     <option value="type">Предястия</option>

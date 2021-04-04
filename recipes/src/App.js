@@ -1,4 +1,5 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,9 +12,30 @@ import firebase from './utils/firebase';
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged((authUser) => {
+  //     if (authUser) {
+  //         console.log('Logged In:');
+  //         console.log(user);
+  //         setUser(authUser);
+  //     } else {
+  //         console.log('Logged Out');
+  //         setUser(null);
+  //     }
+  //   });
+  // }, []) //по този начин ще се изпълни веднъж, onMount
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(setUser) //сетваме юзъра, който вече имаме
+  }, []);
+  
+
   return (
     <div className="App">
-      <Header />
+      <Header user={user} />
+      {/* <h1>{user?.email}</h1> */}
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/type/:type" component={Main} />
