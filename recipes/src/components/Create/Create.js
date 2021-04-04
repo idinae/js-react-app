@@ -1,14 +1,19 @@
 import style from './Create.module.css';
-import { Redirect } from 'react-router-dom';
+import * as recipeService from '../../services/recipeService';
 
-const Create = () => {
-    onCreateRecipeSubmitHandler = (e) => {
+const Create = ({
+    history
+}) => {
+    const onCreateRecipeSubmitHandler = (e) => {
         e.preventDefault();
+
+        const {name, type, products, description, imageUrl} = e.target;
+
         recipeService.create(name.value, type.value, products.value, description.value, imageUrl.value)
         .then(() => {
             history.push('/');
         }) //add error handling!
-    }
+    };
 
     return(
         <div className={style.articlewrapper}>
@@ -26,7 +31,7 @@ const Create = () => {
                 <textarea type="text" rows="5" cols="50" name="products" id="products"></textarea>
                 <label htmlFor="description">Приготовление:</label>
                 <textarea type="text" rows="10" cols="50" name="description" id="description"></textarea>
-                <label htmlFor="imageImageUrl">Снимка:</label>
+                <label htmlFor="imageUrl">Снимка:</label>
                 <input type="text" name="imageUrl" id="imageUrl" />
                 <button type="submit" className={style.buttonstyle} value="Create">Създай</button>
             </form>
