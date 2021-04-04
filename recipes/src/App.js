@@ -34,8 +34,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header user={user} />
+      {/* <Header user={user} /> */}
       {/* <h1>{user?.email}</h1> */}
+      <Header username={user?.email} isAuthenticated={Boolean(user)} />
+      
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/type/:type" component={Main} />

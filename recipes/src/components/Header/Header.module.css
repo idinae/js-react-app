@@ -40,7 +40,11 @@
 	border-left: 1px solid #E7E7E7;
 }
 
-.menu a {
+.menu li:first-child {
+	border-left: none;
+}
+
+.menu a, .welcome {
 	display: block;
 	padding: 10px 20px;
 	margin: 0em 1em;
@@ -88,4 +92,8 @@
 .container {
 	max-width: 1200px;
 	margin: 0px auto;
+}
+
+.welcome {
+	color:  darkgray;
 }
