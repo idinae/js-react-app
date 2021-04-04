@@ -7,7 +7,8 @@ import style from './Details.module.css';
 
 
 const Details = ({
-    match
+    match,
+    isAuthenticated
 }) => {
     let [recipe, setRecipe] = useState({});
 
@@ -16,7 +17,7 @@ const Details = ({
         recipeService.getOne(match.params.recipeId)
             .then(res => setRecipe(res));
     }, []);
-
+ 
     return(
         <div className={style.container}>
             <article className={style.articlewrapper}>
@@ -28,8 +29,8 @@ const Details = ({
                         <p>{recipe.products}</p>
                         <h3>Приготовление:</h3>
                         <p>{recipe.description}</p>
-                        <Link to={`/recipes/details/${recipe.id}/edit`} className={style.button}>Редактирай</Link>
-                        <Link to={`/recipes/details/${recipe.id}/delete`} className={style.button}>Изтрий</Link>
+                        {isAuthenticated ? <Link to={`/recipes/details/${recipe.id}/edit`} className={style.button}>Редактирай</Link> : '' }
+                        {isAuthenticated ? <Link to={`/recipes/details/${recipe.id}/delete`} className={style.button}>Изтрий</Link> : '' }
                     </article>
                </div>
             </article>

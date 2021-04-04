@@ -23,8 +23,6 @@ const Header = ({
                 {isAuthenticated ? <li><Link to="/recipes/create">Create</Link></li> : ''}
                 {isAuthenticated ? <li><Link to="/logout">Logout</Link></li> : ''}
               </ul>
-
-
             </div>
           </div>
 

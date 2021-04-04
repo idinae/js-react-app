@@ -31,21 +31,26 @@ function App() {
     firebase.auth().onAuthStateChanged(setUser) //сетваме юзъра, който вече имаме
   }, []);
   
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    username: user?.email
+  };
 
   return (
     <div className="App">
       {/* <Header user={user} /> */}
       {/* <h1>{user?.email}</h1> */}
-      <Header username={user?.email} isAuthenticated={Boolean(user)} />
+      {/* <Header username={user?.email} isAuthenticated={Boolean(user)} /> */}
+      <Header {...authInfo} />
       
       <Switch>
-        <Route path="/" exact component={Main} />
-        <Route path="/type/:type" component={Main} />
-        <Route path="/recipes/details/:recipeId" component={Details} />
-        <Route path="/recipes/create" component={Create} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/logout" render={props => {
+        <Route path="/" exact render={props => <Main {...props} {...authInfo} />} />
+        <Route path="/type/:type" render={props => <Main {...props} {...authInfo} />} />
+        <Route path="/recipes/details/:recipeId" render={props => <Details {...props} {...authInfo} />} />
+        <Route path="/recipes/create" render={props => <Create {...props} {...authInfo} />} />
+        <Route path="/login" render={props => <Login {...props} {...authInfo} />} />
+        <Route path="/register" render={props => <Register {...props} {...authInfo} />} />
+        <Route path="/logout" render={() => {
           firebase.auth().signOut();
           return (<Redirect to="/" />)
         }} />
