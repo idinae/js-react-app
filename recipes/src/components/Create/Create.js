@@ -2,14 +2,18 @@ import style from './Create.module.css';
 import { Redirect } from 'react-router-dom';
 
 const Create = () => {
-    // onCreateButtonHandler {
-        
-    // }
+    onCreateRecipeSubmitHandler = (e) => {
+        e.preventDefault();
+        recipeService.create(name.value, type.value, products.value, description.value, imageUrl.value)
+        .then(() => {
+            history.push('/');
+        }) //add error handling!
+    }
 
     return(
         <div className={style.articlewrapper}>
             <h1>Създай нова рецепта</h1>
-            <form >
+            <form onSubmit={onCreateRecipeSubmitHandler}>
                 <label htmlFor="type">Категория:</label>
                 <select id="type">
                     <option value="type">Предястия</option>

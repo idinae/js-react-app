@@ -7,7 +7,7 @@ export const getAll = (type = '') => {
 
     return fetch(recipesUrl)
         .then(res => res.json())
-        // .then(res => this.setState({pets: res})) --> goes in Category.js
+        // .then(res => this.setState({recipes: res})) --> goes in Main.js
         .catch(error => console.log(error));
 }
 
@@ -17,12 +17,13 @@ export const getOne = (recipeId) => {
         .catch(error => console.log(error));
 }
 
-export const create = (petName, description, imageURL, category) => {
-    let pet = {
-        name: petName,
+export const create = (recipeName, type, products, description, imageUrl) => {
+    let recipe = {
+        name: recipeName,
+        type,
+        products,
         description,
-        imageURL,
-        category,
+        imageUrl,
         likes: 0
     };
 
@@ -31,22 +32,22 @@ export const create = (petName, description, imageURL, category) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(pet)
+        body: JSON.stringify(recipe)
     });
 };
 
-export const update = (petId, pet) => {
-    return fetch(`${url}/${petId}`, {
+export const update = (recipeId, recipe) => {
+    return fetch(`${url}/${recipeId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(pet)
+        body: JSON.stringify(recipe)
     });
 }
 
-export const pet = (petId, likes) => {
-    return fetch(`${url}/${petId}`, {
+export const recipe = (recipeId, likes) => {
+    return fetch(`${url}/${recipeId}`, {
         method: 'PATCH', //пращаме само отделно пропърти на обекта, което да промени, не целия обект
         headers: {
             'Content-Type': 'application/json',
