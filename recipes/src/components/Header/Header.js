@@ -1,3 +1,5 @@
+import firebase from '../../utils/firebase';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Header.module.css';
 
@@ -5,10 +7,23 @@ const Header = ({
   isAuthenticated,
   username
 }) => {
-    return (
-        <div>
+    useEffect(() => {
+      if(!isAuthenticated) {
+        return;
+      }
 
-<div className={style.container}>
+      firebase.auth().currentUser.getIdToken()
+        .then(function(idToken) {
+          console.log(idToken);
+        })
+        .catch(function(error) {
+        console.log(error);
+      });
+    }, []);
+
+    return (
+      <div>
+        <div className={style.container}>
           <div className={style.header}>
             <div className={style.logo}>
               <h1><Link to="/"><span>Cook</span>Book</Link></h1>
@@ -25,9 +40,8 @@ const Header = ({
               </ul>
             </div>
           </div>
-
-          </div>
         </div>
+      </div>
     );
 }
 
