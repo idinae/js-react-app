@@ -21,9 +21,9 @@ const Create = ({
             <form onSubmit={onCreateRecipeSubmitHandler}>
                 <label htmlFor="type">Категория:</label>
                 <select id="type">
-                    <option value="type">Предястия</option>
-                    <option value="type">Основни ястия</option>
-                    <option value="type">Десерти</option>
+                    <option value="starters">Предястия</option>
+                    <option value="mains">Основни ястия</option>
+                    <option value="desserts">Десерти</option>
                 </select>
                 <label htmlFor="name">Име:</label>
                 <input type="text" name="name" id="name" />
