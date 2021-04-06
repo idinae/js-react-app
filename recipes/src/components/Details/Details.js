@@ -16,7 +16,7 @@ const Details = ({
         // we take the recipe with match and save it 
         recipeService.getOne(match.params.recipeId)
             .then(res => setRecipe(res));
-    }, []);
+    }, [match.params.recipeId]);
  
     return(
         <div className={style.container}>
