@@ -15,11 +15,20 @@ const Header = ({
       firebase.auth().currentUser.getIdToken()
         .then(function(idToken) {
           console.log(idToken);
+          return fetch('http://localhost:8000', {
+            headers: {
+              'Authorization': idToken
+            }
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
         })
         .catch(function(error) {
         console.log(error);
-      });
-    }, []);
+      });    
+    }, [isAuthenticated]);
 
     return (
       <div>
