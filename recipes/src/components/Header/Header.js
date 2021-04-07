@@ -15,7 +15,8 @@ const Header = ({
       firebase.auth().currentUser.getIdToken()
         .then(function(idToken) {
           console.log(idToken);
-          return fetch('http://localhost:8000', {
+          // return fetch('http://localhost:5000', {
+          return fetch('https://recipes-666.herokuapp.com', {
             headers: {
               'Authorization': idToken
             }

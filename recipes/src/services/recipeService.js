@@ -1,4 +1,4 @@
-const url = 'http://localhost:5001/recipes'; 
+const url = 'https://recipes-666.herokuapp.com/recipes'; 
 
 export const getAll = (type = '') => {
 

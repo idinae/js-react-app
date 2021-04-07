@@ -56,12 +56,12 @@ class Main extends Component {
                     <div className={style.reciperow}>
                         {this.state.recipes.map(x => 
                             <Recipe 
-                                key={x.id} 
-                                id={x.id}
+                                key={x._id} 
+                                id={x._id}
                                 type={x.type}
                                 name={x.name} 
                                 description={x.description} 
-                                imageUrl={x.imageUrl} 
+                                imageUrl={x.imageurl} 
                                 likes={x.likes} 
                             />)}
                     </div>
