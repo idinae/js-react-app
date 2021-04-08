@@ -2,14 +2,15 @@ import style from './Create.module.css';
 import * as recipeService from '../../services/recipeService';
 
 const Create = ({
-    history
+    history,
+    username
 }) => {
     const onCreateRecipeSubmitHandler = (e) => {
         e.preventDefault();
 
         const {name, type, products, description, imageUrl} = e.target;
 
-        recipeService.create(name.value, type.value, products.value, description.value, imageUrl.value)
+        recipeService.create(type.value, name.value, products.value, description.value, imageUrl.value, username)
         .then(() => {
             history.push('/');
         }) //add error handling!

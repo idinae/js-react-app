@@ -17,14 +17,14 @@ export const getOne = (recipeId) => {
         .catch(error => console.log(error));
 }
 
-export const create = (recipeName, type, products, description, imageUrl) => {
+export const create = (type, recipeName, products, description, imageUrl, username) => {
     let recipe = {
-        name: recipeName,
         type,
+        name: recipeName,
         products,
         description,
         imageUrl,
-        likes: 0
+        author: username
     };
 
     return fetch(url, {
