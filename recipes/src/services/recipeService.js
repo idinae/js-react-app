@@ -23,7 +23,7 @@ export const create = (type, recipeName, products, description, imageUrl, userna
         name: recipeName,
         products,
         description,
-        imageurl: imageUrl,
+        imageUrl,
         author: username
     };
 
