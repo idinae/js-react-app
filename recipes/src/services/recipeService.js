@@ -34,8 +34,6 @@ export const create = (type, recipeName, products, description, imageUrl, userna
         },
         body: JSON.stringify(recipe)
     })
-        .then(res => res.json())
-        .catch(error => console.log(error));
 };
 
 export const update = (recipeId, recipe) => {
