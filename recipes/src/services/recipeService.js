@@ -12,7 +12,7 @@ export const getAll = (type = '') => {
 }
 
 export const getOne = (recipeId) => {
-    return fetch(`${url}/${recipeId}`)
+    return fetch(`${url}/details/${recipeId}`)
         .then(res => res.json())
         .catch(error => console.log(error));
 }
