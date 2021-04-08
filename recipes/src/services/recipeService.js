@@ -28,7 +28,7 @@ export const create = (type, recipeName, products, description, imageUrl, userna
         author: username
     };
 
-    return fetch(url, {
+    return fetch(`${url}/create`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
