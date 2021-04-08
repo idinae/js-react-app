@@ -23,7 +23,7 @@ export const create = (type, recipeName, products, description, imageUrl, userna
         name: recipeName,
         products,
         description,
-        imageUrl,
+        imageurl: imageUrl,
         author: username
     };
 
@@ -33,7 +33,9 @@ export const create = (type, recipeName, products, description, imageUrl, userna
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(recipe)
-    });
+    })
+        .then(res => res.json())
+        .catch(error => console.log(error));
 };
 
 export const update = (recipeId, recipe) => {

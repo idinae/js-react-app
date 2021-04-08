@@ -8,7 +8,7 @@ const Create = ({
     const onCreateRecipeSubmitHandler = (e) => {
         e.preventDefault();
 
-        const {name, type, products, description, imageUrl} = e.target;
+        const {type, name, products, description, imageUrl} = e.target;
 
         recipeService.create(type.value, name.value, products.value, description.value, imageUrl.value, username)
         .then(() => {
