@@ -30,6 +30,7 @@ export const create = (type, recipeName, products, description, imageUrl, userna
 
     return fetch(`${url}/create`, {
         method: 'POST',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
         },
