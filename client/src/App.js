@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import Details from './components/Details';
 import Create from './components/Create';
+import Edit from './components/Edit';
 import Login from './components/Login';
 import Register from './components/Register';
 import firebase from './utils/firebase';
@@ -46,8 +47,9 @@ function App() {
       <Switch>
         <Route path="/" exact render={props => <Main {...props} {...authInfo} />} />
         <Route path="/type/:type" render={props => <Main {...props} {...authInfo} />} />
-        <Route path="/recipes/details/:recipeId" render={props => <Details {...props} {...authInfo} />} />
+        <Route path="/recipes/details/:recipeId" exact render={props => <Details {...props} {...authInfo} />} />
         <Route path="/recipes/create" render={props => <Create {...props} {...authInfo} />} />
+        <Route path="/recipes/details/:recipeId/edit" render={props => <Edit {...props} {...authInfo} />} />
         <Route path="/login" render={props => <Login {...props} {...authInfo} />} />
         <Route path="/register" render={props => <Register {...props} {...authInfo} />} />
         <Route path="/logout" render={() => {

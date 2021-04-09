@@ -28,8 +28,8 @@ const Details = ({
                         <p>{recipe[0]?.products}</p>
                         <h3>Приготовление:</h3>
                         <p>{recipe[0]?.description}</p>
-                        {isAuthenticated ? <Link to={`/recipes/details/${recipe.id}/edit`} className={style.button}>Редактирай</Link> : '' }
-                        {isAuthenticated ? <Link to={`/recipes/details/${recipe.id}/delete`} className={style.button}>Изтрий</Link> : '' }
+                        {isAuthenticated ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
+                        {isAuthenticated ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button}>Изтрий</Link> : '' }
                     </article>
                </div>
             </article>
