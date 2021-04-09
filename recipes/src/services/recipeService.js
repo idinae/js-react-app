@@ -4,7 +4,7 @@ const url = 'https://recipes-666.herokuapp.com/recipes';
 export const getAll = (type = '') => {
 
     //filter and fetch data from db - functionality of json-server!
-    let recipesUrl = url + ((type && type !== '') ? `?type=${type}` : '');
+    let recipesUrl = url + ((type && type !== '') ? `/${type}` : '');
 
     return fetch(recipesUrl)
         .then(res => res.json())
