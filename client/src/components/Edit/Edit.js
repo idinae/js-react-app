@@ -31,7 +31,7 @@ const Edit = ({
             <h1>Редактирай рецепта: {recipe[0]?.name}</h1>
             <form onSubmit={onEditRecipeSubmitHandler}>
                 <label htmlFor="type">Категория:</label>
-                <select id="type" defaultValue={recipe[0]?.type}>
+                <select id="type" value={recipe[0]?.type}>
                     <option value="starters">Предястия</option>
                     <option value="mains">Основни ястия</option>
                     <option value="desserts">Десерти</option>
