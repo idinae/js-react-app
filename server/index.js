@@ -1,14 +1,3 @@
-// const express = require('express')
-// const path = require('path')
-// const PORT = process.env.PORT || 5000
-
-// express()
-//   .use(express.static(path.join(__dirname, 'public')))
-//   .set('views', path.join(__dirname, 'views'))
-//   .set('view engine', 'ejs')
-//   .get('/', (req, res) => res.render('pages/index'))
-//   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
 const bodyparser = require('body-parser')
 const express = require('express')
 
@@ -22,6 +11,7 @@ var serviceAccount = require("./recipes-666-firebase-adminsdk-7nbon-6ccc26f890.j
 var pool = require('./main/db')
 
 const app = express()
+
 app.use(cors())
 
 let port = process.env.PORT;
@@ -29,27 +19,17 @@ if (port == null || port == "") {
   port = 5000;
 }
 
-
-// Body-parser middleware
+// body-parser middleware
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 
+//db connect
 pool.connect()
 
-
+//authentication
 app.get('/', isAuthenticated, (req, res, next) => {
   res.status(200)
-
-  //check for a specific user
-  // if (req.user.email !== 'admin@user.bg') {
-  //   console.log('You are not the admin');
-  // }
-
-  // app.get('/users/:userId', isAuthenticated, (req, res) => {})
-
   res.json({ ok: true })
-  // console.log(req.headers.authorization);
-  // const token = req.headers.authorization;
 })
 
 //get all recipes
@@ -94,6 +74,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 })
 
+//start server
 app.listen(port, () => {
   console.log(`App running on port: ${port}`)
 })
