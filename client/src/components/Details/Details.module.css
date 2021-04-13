@@ -68,3 +68,28 @@ a:active {
 	background-color: rgb(184, 113, 46);
 	cursor: pointer;
 }
+
+.articlewrapper i {
+	margin-right: 5px;
+	font-size: 18pt;
+	color: lightgray;
+}
+
+.articlewrapper i:hover {
+	color: rgb(235, 143, 57);
+}
+
+.btnlikes {
+	transform: translate(0, 4px);
+	margin-left: 24px;
+	margin-bottom: 20px;
+	background: none;
+	border: none;
+	line-height: normal;
+	text-align: center;
+	text-decoration: none;
+}
+
+.btnlikes:focus {
+	outline: none;
+}
