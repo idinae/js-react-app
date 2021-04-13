@@ -5,11 +5,11 @@ import * as recipeService from '../../services/recipeService';
 
 import style from './Details.module.css';
 
-
 const Details = ({
     match,
     isAuthenticated,
-    username
+    username,
+    history
 }) => {
     let [recipe, setRecipe] = useState({});
 
