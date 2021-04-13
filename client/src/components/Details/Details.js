@@ -12,13 +12,21 @@ const Details = ({
     username
 }) => {
     let [recipe, setRecipe] = useState({});
-    
+
     useEffect(() => {
         // we take the recipe with match and save it 
         recipeService.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
     }, [match.params.recipeId]);
  
+    const onClickLikeHandler = () => {
+        let incrementedLikes = recipe[0]?.likes + 1;
+        recipeService.like(match.params.recipeId, incrementedLikes)
+            .then(() => {
+                setRecipe(state => ({...state, likes: incrementedLikes}))
+            });
+    }
+
     return(
         <div className={style.container}>
             <article className={style.articlewrapper}>
@@ -32,7 +40,7 @@ const Details = ({
                         <p>{recipe[0]?.description}</p>
                             {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
                             {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button}>Изтрий</Link> : '' }
-                            <button className={style.btnlikes}><i class="far fa-heart"></i></button><span>{recipe[0]?.likes}</span>
+                            <button className={style.btnlikes} onClick={onClickLikeHandler}><i className="far fa-heart"></i></button><span>{recipe[0]?.likes}</span>
                     </article>
                </div>
             </article>

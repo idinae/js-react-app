@@ -3,7 +3,6 @@ const url = 'https://recipes-666.herokuapp.com/recipes';
 
 export const getAll = (type = '') => {
 
-    //filter and fetch data from db - functionality of json-server!
     let recipesUrl = url + ((type && type !== '') ? `/${type}` : '');
 
     return fetch(recipesUrl)
@@ -51,13 +50,14 @@ export const update = (recipeId, recipe) => {
         .catch(error => console.log(error));
 }
 
-export const recipe = (recipeId, likes) => {
-    return fetch(`${url}/${recipeId}`, {
-        method: 'PATCH', //пращаме само отделно пропърти на обекта, което да промени, не целия обект
+export const like = (recipeId, likes) => {
+    return fetch(`${url}/${recipeId}/like`, {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({likes})
     })
-        .then(res => res.json());
+        .then(res => res.json())
+        .catch(error => console.log(error));
 }

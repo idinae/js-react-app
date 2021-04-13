@@ -22,7 +22,7 @@ const Recipe = ({
             <Link to={`/recipes/details/${id}`} className={style.button}>Детайли</Link>
           </div>
           <div>
-            <i class="far fa-heart"></i><span>{likes}</span>
+            <i className="far fa-heart"></i><span>{likes}</span>
           </div>
         </article>
       </div>
