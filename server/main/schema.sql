@@ -11,3 +11,5 @@ CREATE TABLE recipes (
     likes INT NOT NULL,
     date_created TIMESTAMP 
   );
+
+  --date_updated TIMESTAMP

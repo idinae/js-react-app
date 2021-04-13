@@ -69,6 +69,18 @@ app.post('/recipes/create', (req, res, next) => {
   })
 })
 
+//create a recipe
+app.put('/recipes/:_id/edit', (req, res, next) => {
+  const values = [req.body.type, req.body.name, req.body.products, req.body.description, req.body.imageUrl]
+  pool.query(`UPDATE recipes (SET type = $1, SET name = $2, SET products = $3, SET description = $4, SET imageurl = $5, SET date_updated = NOW());`, 
+    values, (q_err, q_res) => {
+      if (q_err) { 
+        return 
+      }
+      res.json(q_res.rows)
+  })
+})
+
 //admin account
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
