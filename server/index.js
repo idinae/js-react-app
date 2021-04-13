@@ -81,6 +81,19 @@ app.post('/recipes/:_id/edit', (req, res, next) => {
   })
 })
 
+//update likes
+app.post('/recipes/:_id/like', (req, res, next) => {
+  const _id = req.params._id;
+  const likes = req.body.likes;
+  pool.query(`UPDATE recipes SET likes = $1 WHERE _id = $2;`, 
+    [likes, _id], (q_err, q_res) => {
+      if (q_err) { 
+        return 
+      }
+      res.json(q_res.rows)
+  })
+})
+
 //admin account
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
