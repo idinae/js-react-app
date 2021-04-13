@@ -8,7 +8,8 @@ import style from './Details.module.css';
 
 const Details = ({
     match,
-    isAuthenticated
+    isAuthenticated,
+    username
 }) => {
     let [recipe, setRecipe] = useState({});
     useEffect(() => {
@@ -28,8 +29,8 @@ const Details = ({
                         <p>{recipe[0]?.products}</p>
                         <h3>Приготовление:</h3>
                         <p>{recipe[0]?.description}</p>
-                        {isAuthenticated ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
-                        {isAuthenticated ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button}>Изтрий</Link> : '' }
+                        {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
+                        {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button}>Изтрий</Link> : '' }
                     </article>
                </div>
             </article>
