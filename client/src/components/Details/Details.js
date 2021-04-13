@@ -25,9 +25,7 @@ const Details = ({
             .then(() => {
                 setRecipe(state => ({...state, likes: incrementedLikes}))
             })
-            .then((res) => {
-                 setRecipe(state => ({...state, likes: res.new_likes}))
-            })
+            .then(res => setRecipe(res))
     }
 
     return(

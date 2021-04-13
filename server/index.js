@@ -85,7 +85,7 @@ app.post('/recipes/:_id/edit', (req, res, next) => {
 app.post('/recipes/:_id/like', (req, res, next) => {
   const _id = req.params._id;
   const likes = req.body.likes;
-  pool.query(`UPDATE recipes SET likes = $1 WHERE _id = $2 RETURNING *;`, 
+  pool.query(`UPDATE recipes SET likes = $1 WHERE _id = $2 RETURNING likes as new_likes;`, 
     [likes, _id], (q_err, q_res) => {
       if (q_err) { 
         return 
