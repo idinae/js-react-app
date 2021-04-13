@@ -8,8 +8,7 @@ import style from './Details.module.css';
 const Details = ({
     match,
     isAuthenticated,
-    username,
-    history
+    username
 }) => {
     let [recipe, setRecipe] = useState({});
 
@@ -25,7 +24,6 @@ const Details = ({
             .then(() => {
                 setRecipe(state => ({...state, likes: incrementedLikes}))
             })
-            .then(res => setRecipe(res))
     }
 
     return(
