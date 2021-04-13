@@ -1,3 +1,5 @@
+@import 'https://use.fontawesome.com/releases/v5.10.2/css/all.css'; 
+
 /* CONTAINER */
 .container {
 	max-width: 1200px;
@@ -85,3 +87,18 @@ a:active {
 	border-radius: 5px;
 }
 
+.articlewrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.articlewrapper i {
+	margin-right: 5px;
+	font-size: 16pt;
+	color: lightgray;
+}
+
+.articlewrapper i:hover {
+	color: rgb(235, 143, 57);
+}

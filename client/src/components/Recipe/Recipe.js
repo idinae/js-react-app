@@ -8,6 +8,7 @@ const Recipe = ({
   name,
   description,
   imageUrl,
+  likes
 }) => {
 
     return (
@@ -16,7 +17,14 @@ const Recipe = ({
         <h3>{name}</h3>
         <p>{description}
         </p>
-        <Link to={`/recipes/details/${id}`} className={style.button}>Детайли</Link>
+        <article className={style.articlewrapper}>
+          <div>
+            <Link to={`/recipes/details/${id}`} className={style.button}>Детайли</Link>
+          </div>
+          <div>
+            <i class="far fa-heart"></i><span>{likes}</span>
+          </div>
+        </article>
       </div>
     );
 }
