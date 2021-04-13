@@ -24,7 +24,10 @@ const Details = ({
         recipeService.like(match.params.recipeId, incrementedLikes)
             .then(() => {
                 setRecipe(state => ({...state, likes: incrementedLikes}))
-            });
+            })
+            .then((res) => {
+                 setRecipe(state => ({...state, likes: res.new_likes}))
+            })
     }
 
     return(
