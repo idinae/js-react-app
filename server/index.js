@@ -71,9 +71,7 @@ app.post('/recipes/create', (req, res, next) => {
 
 //update a recipe
 app.put('/recipes/:_id/edit', (req, res, next) => {
-  const values = [req.body.type, req.body.name, req.body.products, req.body.description, req.body.imageUrl]
-  const _id = req.params._id;
-  values.push(_id);
+  const values = [req.body.type, req.body.name, req.body.products, req.body.description, req.body.imageUrl, req.body._id]
   pool.query(`UPDATE recipes SET type = $1, name = $2, products = $3, description = $4, imageurl = $5, date_updated = NOW() WHERE _id = $6;`, 
     values, (q_err, q_res) => {
       if (q_err) { 
