@@ -81,3 +81,7 @@ textarea {
     outline: none;
     border: 1px solid rgb(32, 32, 32);
 }
+
+.selectBox {
+    background-color: lightgray;
+}

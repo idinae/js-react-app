@@ -48,8 +48,8 @@ function App() {
         <Route path="/" exact render={props => <Main {...props} {...authInfo} />} />
         <Route path="/type/:type" render={props => <Main {...props} {...authInfo} />} />
         <Route path="/recipes/details/:recipeId" exact render={props => <Details {...props} {...authInfo} />} />
-        <Route path="/recipes/create" render={props => <Create {...props} {...authInfo} />} />
         <Route path="/recipes/details/:recipeId/edit" render={props => <Edit {...props} {...authInfo} />} />
+        <Route path="/recipes/create" render={props => <Create {...props} {...authInfo} />} />
         <Route path="/login" render={props => <Login {...props} {...authInfo} />} />
         <Route path="/register" render={props => <Register {...props} {...authInfo} />} />
         <Route path="/logout" render={() => {
