@@ -15,6 +15,23 @@ const Edit = ({
     }, [match.params.recipeId])
 
 
+    
+    // const onDescriptionSaveSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(e.target);
+
+    //     let petId = match.params.petId;
+    //     let updatedPet = {...pet, description: e.target.description.value} //взимаме стария pet, на който променяме само description
+        
+    //     petsService.update(petId, updatedPet) //подаваме променения pet към базата
+    //         .then(() => {
+    //             history.push(`/pets/details/${petId}`); //връщаме се на детайлите на променения pet
+    //             return;
+    //         });
+    // }
+
+
+
     const onEditRecipeSubmitHandler = (e) => {
         e.preventDefault();
 
