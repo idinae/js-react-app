@@ -41,7 +41,7 @@ export const create = (type, recipeName, products, description, imageUrl, userna
 
 export const update = (recipeId, recipe) => {
     return fetch(`${url}/${recipeId}/edit`, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },

@@ -19,6 +19,7 @@ const Edit = ({
         e.preventDefault();
         
         let recipeId = match.params.recipeId;
+        
         let updatedRecipe = {...recipe[0], 
             type: e.target.type.value,
             name: e.target.name.value,
@@ -31,8 +32,7 @@ const Edit = ({
         recipeService.update(recipeId, updatedRecipe)
             .then(() => {
                 history.push(`/recipes/details/${recipeId}`);
-                return;
-            });
+            })
     };
 
     return(
