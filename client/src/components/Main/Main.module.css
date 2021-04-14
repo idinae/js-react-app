@@ -81,3 +81,20 @@ header h1, h2, h3 {
 	border: 1px solid rgb(184, 113, 46) !important;
 }
 
+
+@MEDIA all and (max-width: 600px) {
+
+    .body {
+        max-width: 600px;
+	}
+	
+	.container {
+		max-width: 600;
+		margin: 0px auto;
+	}
+
+	.imglogo {
+		display: none;
+	}
+
+}

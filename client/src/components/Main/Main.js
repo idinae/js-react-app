@@ -49,7 +49,7 @@ class Main extends Component {
         return (
             <div className={style.container}>
                 <div> 
-                    <img src="/assets/images/img1.jpg" alt="aubergine in a plate" />
+                    <img className={style.imglogo} src="/assets/images/img1.jpg" alt="aubergine in a plate" />
                 </div>
                 <div>
                     <MainNav typecheck={this.state.currentType} />

@@ -36,7 +36,7 @@ const Header = ({
         <div className={style.container}>
           <div className={style.header}>
             <div className={style.logo}>
-              <h1><Link to="/"><span>Cook</span>Book</Link></h1>
+              <h1><Link to="/" className={style.headerlogo}><span>Cook</span>Book</Link></h1>
             </div>
             <div className={style.menu}>
               <ul>

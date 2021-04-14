@@ -63,3 +63,20 @@
   .dropbtn:focus, .dropbtn:visited {
 	border: 1px solid rgb(184, 113, 46) !important;
 }
+
+@MEDIA all and (max-width: 600px) {
+
+	.dropdown {
+		max-width: 600px;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.dropbtn {
+		min-width: 300px;
+		margin: 20px 0 0 0;
+
+	}
+
+}

@@ -97,3 +97,39 @@
 .welcome {
 	color:  darkgray;
 }
+
+
+@MEDIA all and (max-width: 600px) {
+
+    .body {
+		max-width: 600px;
+	}
+	
+	.container {
+		max-width: 600;
+		margin: 0px auto;
+	}
+
+	.header {
+		max-width: 600;
+		margin: 0px auto;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.menu {
+		max-width: 100%;
+	}
+
+	.menu ul {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		float: unset;
+		text-align: center;
+		padding: 0 0 20px 0;
+	}
+
+}
