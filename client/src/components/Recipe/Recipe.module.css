@@ -102,3 +102,14 @@ a:active {
 /* .articlewrapper i:hover {
 	color: rgb(235, 143, 57);
 } */
+
+
+@MEDIA all and (max-width: 600px) {
+
+	.thumbnail:nth-child(3n+1),
+	.thumbnail:nth-child(3n+3) {
+		margin: 20px 30px 10px;
+	}
+
+
+}
