@@ -21,3 +21,13 @@
 	max-width: 1200px;
 	margin: 0px auto;
 }
+
+
+@MEDIA all and (max-width: 600px) {
+
+	.container {
+		max-width: 600px;
+		margin: 0px auto;
+	}
+	
+}

@@ -76,7 +76,15 @@
 	.dropbtn {
 		min-width: 300px;
 		margin: 20px 0 0 0;
-
 	}
 
+	.dropdowncont {
+		margin-top: 60px;
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	.dropdowncont a {
+		padding: 20px 0;
+	}
 }
