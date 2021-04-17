@@ -21,7 +21,7 @@ const Details = ({
                 }
             });
             return () => { isMounted = false };
-    }, [match.params.recipeId, recipe]);
+    }, [match.params.recipeId, recipe.likes]);
  
     const onClickLikeHandler = () => {
         let incrementedLikes = recipe[0]?.likes + 1;
