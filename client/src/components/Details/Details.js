@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import * as recipeService from '../../services/recipeService';
-
 import style from './Details.module.css';
 
 const Details = ({
@@ -16,7 +14,7 @@ const Details = ({
         // we take the recipe with match and save it 
         recipeService.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
-    }, [match.params.recipeId]);
+    }, [match.params.recipeId, recipe]);
  
     const onClickLikeHandler = () => {
         let incrementedLikes = recipe[0]?.likes + 1;
