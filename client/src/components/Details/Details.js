@@ -6,14 +6,21 @@ import style from './Details.module.css';
 const Details = ({
     match,
     isAuthenticated,
-    username
+    username,
+    history
 }) => {
     let [recipe, setRecipe] = useState({});
 
     useEffect(() => {
+        let isMounted = true;
         // we take the recipe with match and save it 
         recipeService.getOne(match.params.recipeId)
-            .then(res => setRecipe(res))
+            .then(res => {
+                if(isMounted) {
+                setRecipe(res);
+                }
+            });
+            return () => { isMounted = false };
     }, [match.params.recipeId, recipe]);
  
     const onClickLikeHandler = () => {
@@ -22,6 +29,13 @@ const Details = ({
             .then(() => {
                 setRecipe(state => ({...state, likes: incrementedLikes}))
             })
+    }
+
+    const onClickDeleteHandler = () => {
+        recipeService.deleteRecipe(match.params.recipeId)
+        .then(() => {
+            history.push("/");
+        })
     }
 
     return(
@@ -36,7 +50,7 @@ const Details = ({
                         <h3>Приготовление:</h3>
                         <p>{recipe[0]?.description}</p>
                             {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
-                            {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button}>Изтрий</Link> : '' }
+                            {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button} onClick={onClickDeleteHandler}>Изтрий</Link> : '' }
                             <button className={style.btnlikes} onClick={onClickLikeHandler}><i className="far fa-heart"></i></button><span>{recipe[0]?.likes}</span>
                     </article>
                </div>

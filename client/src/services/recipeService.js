@@ -61,3 +61,11 @@ export const like = (recipeId, likes) => {
         .then(res => res.json())
         .catch(error => console.log(error));
 }
+
+export const deleteRecipe = (recipeId) => {
+    return fetch(`${url}/${recipeId}/delete`, {
+        method: 'DELETE',
+    })
+        .then(res => res.json())
+        .catch(error => console.log(error));
+}

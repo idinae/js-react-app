@@ -94,6 +94,18 @@ app.post('/recipes/:_id/like', (req, res, next) => {
   })
 })
 
+//delete
+app.post('/recipes/:_id/delete', (req, res, next) => {
+  const _id = req.params._id;
+  pool.query(`DELETE FROM recipes WHERE _id = $1 RETURNING *;`, 
+    [_id], (q_err, q_res) => {
+      if (q_err) { 
+        return 
+      }
+      res.json(q_res.rows)
+  })
+})
+
 //admin account
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
