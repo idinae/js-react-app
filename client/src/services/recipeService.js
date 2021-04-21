@@ -1,4 +1,4 @@
-const url = 'https://recipes-666.herokuapp.com/recipes'; 
+const url = 'https://recipes-666.herokuapp.com/recipes';
 // const url = 'http://localhost/5001'; 
 
 export const getAll = (type = '') => {
@@ -28,44 +28,46 @@ export const create = (type, recipeName, products, description, imageUrl, userna
     };
 
     return fetch(`${url}/create`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(recipe)
-    })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(recipe)
+        })
         .then(res => res.json())
-        .catch(error => console.log(error));    
+        .catch(error => console.log(error));
 };
 
 export const update = (recipeId, recipe) => {
     return fetch(`${url}/${recipeId}/edit`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(recipe)
-    })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(recipe)
+        })
         .then(res => res.json())
         .catch(error => console.log(error));
 }
 
 export const like = (recipeId, likes) => {
     return fetch(`${url}/${recipeId}/like`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({likes})
-    })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                likes
+            })
+        })
         .then(res => res.json())
         .catch(error => console.log(error));
 }
 
 export const deleteRecipe = (recipeId) => {
     return fetch(`${url}/${recipeId}/delete`, {
-        method: 'POST',
-    })
+            method: 'POST',
+        })
         .then(res => res.json())
         .catch(error => console.log(error));
 }

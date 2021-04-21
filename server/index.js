@@ -20,7 +20,9 @@ if (port == null || port == "") {
 }
 
 // body-parser middleware
-app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.urlencoded({
+  extended: false
+}))
 app.use(bodyparser.json())
 
 //db connect
@@ -29,7 +31,9 @@ pool.connect()
 //authentication
 app.get('/', isAuthenticated, (req, res, next) => {
   res.status(200)
-  res.json({ ok: true })
+  res.json({
+    ok: true
+  })
 })
 
 //get all recipes
@@ -60,50 +64,50 @@ app.get('/recipes/details/:_id', (req, res, next) => {
 //create a recipe
 app.post('/recipes/create', (req, res, next) => {
   const values = [req.body.type, req.body.name, req.body.products, req.body.description, req.body.imageUrl, req.body.author]
-  pool.query(`INSERT INTO recipes (type, name, products, description, imageurl, author, likes, date_created) VALUES ($1, $2, $3, $4, $5, $6, 0, NOW() );`, 
+  pool.query(`INSERT INTO recipes (type, name, products, description, imageurl, author, likes, date_created) VALUES ($1, $2, $3, $4, $5, $6, 0, NOW() );`,
     values, (q_err, q_res) => {
-      if (q_err) { 
-        return 
+      if (q_err) {
+        return
       }
       res.json(q_res.rows)
-  })
+    })
 })
 
 //update a recipe
 app.post('/recipes/:_id/edit', (req, res, next) => {
   const values = [req.body.type, req.body.name, req.body.products, req.body.description, req.body.imageurl, req.body._id]
-  pool.query(`UPDATE recipes SET type = $1, name = $2, products = $3, description = $4, imageurl = $5, date_updated = NOW() WHERE _id = $6;`, 
+  pool.query(`UPDATE recipes SET type = $1, name = $2, products = $3, description = $4, imageurl = $5, date_updated = NOW() WHERE _id = $6;`,
     values, (q_err, q_res) => {
-      if (q_err) { 
-        return 
+      if (q_err) {
+        return
       }
       res.json(q_res.rows)
-  })
+    })
 })
 
 //update likes
 app.post('/recipes/:_id/like', (req, res, next) => {
   const _id = req.params._id;
   const likes = req.body.likes;
-  pool.query(`UPDATE recipes SET likes = $1 WHERE _id = $2 RETURNING likes as new_likes;`, 
+  pool.query(`UPDATE recipes SET likes = $1 WHERE _id = $2 RETURNING likes as new_likes;`,
     [likes, _id], (q_err, q_res) => {
-      if (q_err) { 
-        return 
+      if (q_err) {
+        return
       }
       res.json(q_res.rows)
-  })
+    })
 })
 
 //delete
 app.post('/recipes/:_id/delete', (req, res, next) => {
   const _id = req.params._id;
-  pool.query(`DELETE FROM recipes WHERE _id = $1 RETURNING *;`, 
+  pool.query(`DELETE FROM recipes WHERE _id = $1 RETURNING *;`,
     [_id], (q_err, q_res) => {
-      if (q_err) { 
-        return 
+      if (q_err) {
+        return
       }
       res.json(q_res.rows)
-  })
+    })
 })
 
 //admin account
