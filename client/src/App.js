@@ -10,7 +10,7 @@ import Edit from './components/Edit';
 import Login from './components/Login';
 import Register from './components/Register';
 import firebase from './utils/firebase';
-import './App.css';
+import './App.module.css';
 
 function App() {
   const [user, setUser] = useState(null);

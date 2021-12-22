@@ -1,6 +1,6 @@
 import firebase from '../../utils/firebase';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; //навигира, без да презарежда страницата
 import style from './Header.module.css';
 
 const Header = ({
