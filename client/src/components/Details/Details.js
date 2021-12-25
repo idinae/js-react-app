@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as recipeService from '../../services/recipeService';
 import style from './Details.module.css';
