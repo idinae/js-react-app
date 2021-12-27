@@ -10,7 +10,7 @@ import Edit from './components/Edit';
 import Login from './components/Login';
 import Register from './components/Register';
 import firebase from './utils/firebase';
-import './App.module.css';
+import style from './App.module.css';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -56,6 +56,7 @@ function App() {
           firebase.auth().signOut();
           return (<Redirect to="/" />)
         }} />
+        <Route render={() => <h1 className={style.notfound}>Ooops... This page was not found!</h1>} />
       </Switch>
 
       <Footer />
