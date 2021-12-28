@@ -7,7 +7,7 @@ const Register = ({
 }) => {
     const [username, setUsername] = useState('@');
     const [password, setPassword] = useState('123456');
-    const [repeatPassword, setRepeatPassword] = useState('');
+    const [repeatPassword, setRepeatPassword] = useState('123456');
 
     const onUsernameChangeHandler = (e) => {
         setUsername(e.target.value)
