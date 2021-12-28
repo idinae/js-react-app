@@ -46,6 +46,7 @@ const Header = ({
                 {isAuthenticated ? '' : <li><Link to="/login">Login</Link></li>}
                 {isAuthenticated ? '' : <li><Link to="/register">Register</Link></li>}
                 {isAuthenticated ? <li><Link to="/recipes/create">Create</Link></li> : ''}
+                {isAuthenticated ? <li><Link to="/profile">Profile</Link></li> : ''}
                 {isAuthenticated ? <li><Link to="/logout">Logout</Link></li> : ''}
               </ul>
             </div>

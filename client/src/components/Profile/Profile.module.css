@@ -1,0 +1,14 @@
+.container {
+    width: 1200px;
+    margin: 0px auto;
+  }
+  
+  .articlewrapper {
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+  }
+  
+  .articlewrapper h1 {
+    padding: 50px 0 30px;
+  }
