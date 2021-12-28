@@ -11,8 +11,6 @@ const Profile = ({
     useEffect(() => {
         recipeService.getAll()
             .then(res => setRecipes(res))
-            .then(console.log(recipes)
-            )
     }, [])
 
     return(
