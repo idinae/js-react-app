@@ -51,7 +51,11 @@ const Details = ({
                         <p>{recipe[0]?.description}</p>
                             {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/edit`} className={style.button}>Редактирай</Link> : '' }
                             {isAuthenticated && username === recipe[0]?.author ? <Link to={`/recipes/details/${recipe[0]?._id}/delete`} className={style.button} onClick={onClickDeleteHandler}>Изтрий</Link> : '' }
-                            <button className={style.btnlikes} onClick={onClickLikeHandler}><i className="far fa-heart"></i></button><span>{recipe[0]?.likes}</span>
+                            {isAuthenticated 
+                                ? <button className={style.btnlikes} onClick={onClickLikeHandler}><i className="far fa-heart"></i></button> 
+                                : <button className={`${style.btnlikes} ${style.guest}`}><i className="far fa-heart"></i></button>
+                            }
+                            <span>{recipe[0]?.likes}</span>
                     </article>
                </div>
             </article>

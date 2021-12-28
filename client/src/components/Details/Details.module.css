@@ -108,3 +108,7 @@ a:active {
 		text-align: center;
 	  }
 }
+
+button.guest>i:hover {
+	color: lightgray;
+}
