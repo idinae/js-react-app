@@ -12,3 +12,18 @@
   .articlewrapper h1 {
     padding: 50px 0 30px;
   }
+
+  .profilelink {
+  	text-decoration: none;
+  }
+
+  .profilelink:hover, 
+  .profilelink:visited:hover {
+    background-color: #FFF;
+    color: rgb(235, 143, 57);
+  }
+
+  .profilelink:visited {
+    color: gray;
+  }
+
