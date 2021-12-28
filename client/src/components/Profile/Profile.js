@@ -24,6 +24,7 @@ const Profile = ({
                         {
                         recipes
                             .filter(x => x.author === username)
+                            .sort((a, b) => a.name.localeCompare(b.name))
                             .map(x => <div key={x._id} >{x.name}</div>)
                         }
                     </div>
