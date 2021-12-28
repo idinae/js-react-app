@@ -24,3 +24,6 @@ MAIN PAGES & FEATURES
   - Edit recipes (if author)
   - Delete recipes (if author)
   - Like a recipe
+- Private page - logged user information
+  - user email
+  - names of created recipes sorted alphabetically
