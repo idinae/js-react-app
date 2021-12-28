@@ -19,8 +19,8 @@ MAIN PAGES & FEATURES
 - Register page with basic error handling (controlled form)
 - Login page - after succesful login redirects to home page
 - Home page - with public and privite part (header)
-- Filtering based on type
+- Filtering based on recipe category
 - Details page - allows logged users to:
   - Edit recipes (if author)
   - Delete recipes (if author)
-- Like a recipe
+  - Like a recipe
