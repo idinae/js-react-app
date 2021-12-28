@@ -15,7 +15,7 @@ PROJECT INFO
 -------------------------
 MAIN PAGES & FEATURES
 -------------------------
-- Firefox authentificaton
+- Firebase authentificaton
 - Register page with basic error handling (controlled form)
 - Login page - after succesful login redirects to home page
 - Home page - with public and privite part (header)
