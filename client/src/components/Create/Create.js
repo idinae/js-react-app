@@ -1,20 +1,28 @@
+import { useState } from 'react';
 import style from './Create.module.css';
 import * as recipeService from '../../services/recipeService';
 
-//Uncontrolled form
 const Create = ({
     history,
     username
 }) => {
+    const [state, setState] = useState('123');
+
+    const onChangeNameHandler = (e) => {
+        setState(e.target.value)
+    };
+
     const onCreateRecipeSubmitHandler = (e) => {
         e.preventDefault();
 
         const {type, name, products, description, imageUrl} = e.target;
 
-        recipeService.create(type.value, name.value, products.value, description.value, imageUrl.value, username)
-        .then(() => {
-            history.push('/');
-        }) //add error handling!
+        if(name.value.length >= 3) {
+            recipeService.create(type.value, name.value, products.value, description.value, imageUrl.value, username)
+            .then(() => {
+                history.push('/');
+            })
+        } else return
     };
 
     return(
@@ -28,7 +36,8 @@ const Create = ({
                     <option value="desserts">Десерти</option>
                 </select>
                 <label htmlFor="name">Име:</label>
-                <input type="text" name="name" id="name" />
+                <input type="text" name="name" id="name" onChange={onChangeNameHandler} />
+                <div className={`${style.validation} ${state.length<3 && style.show}`}>Name length should be minimum 3 characters.</div>
                 <label htmlFor="products">Продукти:</label>
                 <textarea type="text" rows="5" cols="50" name="products" id="products"></textarea>
                 <label htmlFor="description">Приготовление:</label>
